@@ -1,196 +1,240 @@
-```markdown
-# StuCode - Modern Text Editor and Code Visualizer
+<div align="center">🚀 StuCode
 
-StuCode is a powerful desktop text editor built with Electron and Monaco Editor, featuring advanced code visualization capabilities with Mermaid.js, D3.js, and Tree-sitter integration.
+A Modern Desktop Text Editor & Code Visualizer
+Built with Electron ⚡ & Monaco Editor 📝
 
-## Features
+   
 
-- **Modern UI**: VS Code-like interface with clean, responsive design
-- **Monaco Editor**: Full-featured code editor with syntax highlighting, IntelliSense, and more
-- **File Management**: Complete file system operations with tree view
-- **Terminal Integration**: Built-in terminal with multiple sessions
-- **Code Visualization**:
-  - Mermaid.js for flowcharts and diagrams
-  - D3.js for algorithm visualizations
-  - Tree-sitter for code analysis and tracing
-- **Extension System**: Custom extension marketplace
-- **Run & Debug**: Integrated debugging and code execution
 
-## Installation
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
+</div>
+---
+
+✨ Highlights
+
+🎨 Modern UI → Custom title bar, VS Code-inspired layout, light & dark themes
+
+📂 File Management → Explorer tree, new/open/save, auto-save, live updates
+
+📝 Editor Power → Monaco engine, multi-tabs, syntax highlighting, zoom controls
+
+📊 Visualizations → Flowcharts (Mermaid.js), interactive charts (D3.js), syntax trees (Tree-sitter), execution tracing
+
+💻 Built-in Terminal → xterm.js integration, multiple/split terminals, cross-platform
+
+🔌 Extensions → Custom marketplace, extension API, easy install/manage
+
+⌨️ Productivity → Standard shortcuts, customizable keybindings
+
+
+
+---
+
+⚡ Quick Start
+
+Prerequisites
+
+Node.js v16+
+
+npm or yarn
+
+
+Installation
+
+git clone https://github.com/yourusername/stucode.git
 cd stucode
-```
-
-1. Install dependencies:
-
-```bash
 npm install
-```
-
-1. Start the application:
-
-```bash
 npm start
-```
 
-Development
+Build
 
-For development with hot reload:
+npm run build        # Current platform
+npm run build:all    # All platforms
 
-```bash
-npm run dev
-```
 
-Building
+---
 
-To build for production:
+📂 Project Structure
 
-```bash
-npm run build
-```
-
-Project Structure
-
-```
 stucode/
-├── main.js                 # Electron main process
-├── preload.js             # Preload script for security
-├── package.json           # Project configuration
+├── main.js                # Electron main process
+├── preload.js             # Secure bridge
+├── renderer.js            # Renderer process
+├── index.html             # UI
+├── styles.css             # Styles
+├── package.json           # Config & dependencies
 ├── src/
-│   ├── index.html         # Main window HTML
-│   ├── css/               # Stylesheets
-│   │   ├── main.css
-│   │   ├── sidebar.css
-│   │   └── footer.css
-│   ├── js/                # JavaScript modules
-│   │   ├── renderer.js    # Main application logic
-│   │   ├── editor.js      # Monaco editor management
-│   │   ├── fileManager.js # File system operations
-│   │   ├── sidebar.js     # Sidebar panels management
-│   │   ├── footer.js      # Status bar functionality
-│   │   ├── terminal.js    # Terminal integration
-│   │   ├── menu.js        # Menu system
-│   │   ├── mermaid-integration.js
-│   │   ├── d3-integration.js
-│   │   └── tree-sitter-integration.js
-│   └── assets/            # Static assets
-└── README.md
-```
+│   ├── menu/menuBuilder.js
+│   ├── file/fileManager.js
+│   ├── terminal/terminalManager.js
+│   ├── visualization/
+│   │   ├── mermaidRenderer.js
+│   │   ├── d3Renderer.js
+│   │   └── treeSitterParser.js
+│   └── extensions/extensionManager.js
+├── icons/
+└── dist/                  # Production build
 
-Keyboard Shortcuts
 
-· Ctrl+N: New File
+---
 
-· Ctrl+O: Open File
+🛠️ Built With
 
-· Ctrl+S: Save
+⚡ Electron – Cross-platform framework
 
-· Ctrl+Shift+S: Save As
+📝 Monaco Editor – Code editing engine
 
-· Ctrl+W: Close File
+💻 xterm.js – Terminal integration
 
-· Ctrl+F: Find
+📊 Mermaid.js – Flowcharts & diagrams
 
-· Ctrl+H: Replace
+📈 D3.js – Data visualizations
 
-· Ctrl+Z: Undo
+🌳 Tree-sitter – Syntax parsing
 
-· Ctrl+Y: Redo
+👀 Chokidar – File watching
 
-· Ctrl+Shift+E: Toggle Explorer
 
-· Ctrl+Shift+X: Toggle Extensions
 
-· Ctrl+Shift+D: Toggle Run & Debug
+---
 
-· `Ctrl+\``: Toggle Terminal
+💡 Usage
 
-· F5: Run Active File
+Editing
 
-· Ctrl+F5: Run with Visualization
+Open files/folders via menu or drag & drop
 
-Dependencies
+Multi-tab editing with syntax highlighting
 
-Core
+Save via Ctrl/Cmd + S
 
-· Electron - Desktop app framework
-
-· Monaco Editor - Code editor component
 
 Visualization
 
-· Mermaid.js - Diagram generation
+Flowcharts, syntax trees, and execution flow
 
-· D3.js - Data visualization
-
-· Tree-sitter - Code parsing
+Step-by-step algorithm tracing
 
 
-Utilities
+Terminal
 
-· Socket.io - Real-time communication
+Toggle with `Ctrl + ``
 
-· Express - Web server for extensions
+Split into multiple terminals
 
-· Chokidar - File watching
-
-· UUID - Unique identifier generation
+Run build tasks & commands
 
 
-Extension Development
+Extensions
 
-Extensions can be developed using the provided API:
+Browse marketplace
 
-```javascript
-// Example extension
-StuCode.extensions.register({
-    name: 'my-extension',
-    activate: (context) => {
-        // Extension activation logic
-    },
-    deactivate: () => {
-        // Cleanup logic
-    }
-});
-```
+Install/manage easily
 
-Contributing
+Enable/disable on demand
 
-1. Fork the repositor
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
 
-License
 
-MIT License - see LICENSE file for details
+---
 
-Support
+🎨 Customization
 
-For support and questions:
+Themes: Light/Dark switchable in settings
 
-· Create an issue on GitHub
+Keybindings: Editable via keybindings.json
 
-· Join our Discord community
+Settings: Stored in stucode-settings.json
 
-· Check the documentation at stucode.dev/docs
 
-Roadmap
 
-· Plugin system enhancements
+---
 
-· Cloud synchronization
+🐛 Troubleshooting
 
-· AI-assisted coding
+❌ App won’t start → Check Node.js version, reinstall dependencies
 
-· Enhanced debugging capabilities
+❌ Terminal not working → Verify shell config
 
-· Mobile app version
+❌ Extensions failing → Open Developer Tools (View → Toggle DevTools)
 
-· Theme marketplace
+❌ File issues → Check permissions
 
-```
+
+
+---
+
+📝 FAQ
+
+Is it free? → Yes, MIT licensed
+
+Commercial use? → Allowed
+
+How’s it different from VS Code? → Lightweight, visualization-focused
+
+Languages supported? → All Monaco-supported (JS, TS, Python, Java, C++, etc.)
+
+Updates? → Delivered via GitHub releases
+
+
+
+---
+
+🤝 Contributing
+
+We ❤️ contributors!
+
+1. Fork the repo
+
+
+2. Create a feature branch → git checkout -b feature/amazing
+
+
+3. Commit changes → git commit -m "Add amazing feature"
+
+
+4. Push branch → git push origin feature/amazing
+
+
+5. Open Pull Request
+
+
+
+
+---
+
+📄 License
+
+Licensed under the MIT License.
+
+
+---
+
+🗺️ Roadmap
+
+Near-term:
+
+More visualization types
+
+Git integration
+
+Advanced debugging
+
+
+Future:
+
+Plugin system for visualization engines
+
+Collaborative editing
+
+Cloud sync
+
+Mobile companion app
+
+
+
+---
+
+<div align="center">✨ Made with passion by the StuCode Team ✨
+🌐 [Website] · 📚 [Docs] · ⬇️ [Download]
+
+</div>
